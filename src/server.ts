@@ -16,9 +16,11 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 // Rotas
 server.use(mainRoutes);
-server.use((req, res) => { 
+server.use((req, res) => {
     res.render('pages/404');
 })
 
+const PORT = process.env.PORT || 3000;
+console.log("server started on port:", PORT);
 
-server.listen(process.env.PORT)
+server.listen(PORT);
